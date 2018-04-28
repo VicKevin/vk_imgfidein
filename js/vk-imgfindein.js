@@ -59,7 +59,7 @@
 			}
 			this.controls = this.controlBox.querySelectorAll('.control-item');
 			this.imgItems = this.slideBox.querySelectorAll('.slide-item');
-			if(document.querySelector('body').scrollWidth > 750) {
+			if(document.querySelector('body').scrollWidth < 750) {
 				if(this.video) {
 					var video = document.createElement('video');
 					video.setAttribute('autoplay','autoplay');
@@ -126,12 +126,12 @@
 					});
 				}
 			};
-			addEvents(self.videoEle,'canplaythrough',function() {
-				if(document.querySelector('body').scrollWidth > 750) {
-					self.videoBg.style.display = 'block';
-					self.slideBox.style.display = 'none';
-				}
-			});
+			if(document.querySelector('body').scrollWidth > 750) {
+				addEvents(self.videoEle,'canplaythrough',function() {
+						self.videoBg.style.display = 'block';
+						self.slideBox.style.display = 'none';
+				});
+			}
 			addEvents(self.content,'mouseenter',function() {
 				if(document.querySelector('body').scrollWidth > 750) {
 					clearInterval(self.timer);
