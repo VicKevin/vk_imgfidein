@@ -122,7 +122,8 @@
 					});
 				}
 			};
-			addEvents(self.videoEle,'canplaythrough',function() {
+			addEvents(self.videoEle,'canplaythrough',function(e) {
+				console.log(e);
 				self.videoBg.style.display = 'block';
 				self.slideBox.style.display = 'none';
 			});
