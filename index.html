@@ -67,7 +67,7 @@
 		};
 		new Imgfidein('vk_banner',bgData);
 	};
-	if(document.readyState == 'complete') {
+	if(document.readyState !== 'complete') {
 		console.log(1234);
 		document.querySelector('.vk-video').style.display = 'block';
 		document.querySelector('.vk-slide').style.display = 'none';
