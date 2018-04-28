@@ -59,7 +59,7 @@
 			}
 			this.controls = this.controlBox.querySelectorAll('.control-item');
 			this.imgItems = this.slideBox.querySelectorAll('.slide-item');
-			if(document.querySelector('body').scrollWidth < 750) {
+			if(document.querySelector('body').scrollWidth > 750) {
 				if(this.video) {
 					var video = document.createElement('video');
 					video.setAttribute('autoplay','autoplay');
