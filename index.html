@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>imgfidein</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="container">
+		<div id="vk_banner" class="vk-bg-slide">
+			<div class="vk-slide">
+				<!-- imgList -->
+			</div>
+			<div class="vk-video">
+				<!-- video -->
+			</div>
+			<div class="vk-shade">
+				<div class="vk-content">
+					<div class="content-item active">
+						三生三世
+					</div>
+					<div class="content-item">
+						十里桃花
+					</div>
+					<div class="content-item">
+						一心一意
+					</div>
+					<div class="content-item">
+						千年等待
+					</div>
+					<div class="vk-control">
+						<!-- controlList -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/vk-imgfindein.js"></script>
+<script>
+	window.onload = function() {
+		var bgData = {
+			imgs: [
+				{
+					id: 1,
+					title: '溯源',
+					url: 'imgs/01.jpg'
+				},{
+					id: 2,
+					title: '溯源',
+					url: 'imgs/02.jpg'
+				},{
+					id: 3,
+					title: '溯源',
+					url: 'imgs/03.jpg'
+				},{
+					id: 4,
+					title: '溯源',
+					url: 'imgs/04.jpg'
+				}
+			],
+			video: [
+				{url: 'video/video.mp4', type: 'video/mp4'},
+				{url: 'video/video.ogg', type: 'video/ogg'}
+			],
+			delay: 4000
+		};
+		new Imgfidein('vk_banner',bgData);
+	};
+	if(document.readyState == 'complete') {
+		document.querySelector('.vk-video').style.display = 'block';
+		document.querySelector('.vk-slide').style.display = 'none';
+	}
+</script>
+</html>

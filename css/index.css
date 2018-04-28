@@ -1,0 +1,120 @@
+*{margin:0;padding: 0;}
+img {border:0;	vertical-align:middle; }
+ul, ol { list-style:none; }
+html,body{height: 100%;width: 100%;}
+.container {
+	height: 100%;
+	overflow: hidden;
+}
+.vk-bg-slide {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.vk-slide {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	display: none;
+}
+.vk-slide img.slide-item {
+	position: absolute;
+	left: 50%;
+	margin-left: -960px;
+	z-index: 1;
+	opacity: 0;
+	transform: scale(1.2);
+	transition: all 1s;
+}
+.vk-slide img.slide-item.active {
+	transform: scale(1);
+	opacity: 1;
+}
+.vk-shade {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, .3);
+	z-index: 99;
+}
+.vk-content {
+	position: absolute;
+	top: 200px;
+	right: 200px;
+	width: 300px;
+	height: 450px;
+	background-color: rgba(255, 255, 255, .3);
+	z-index: 99;
+}
+.content-item {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 1s;
+	box-sizing: border-box;
+	padding: 15px;
+	line-height: 200px;
+	text-align: center;
+	font-size: 28px;
+	font-weight: 700;
+	color: #fff;
+	text-shadow: 0 0 8px #000;
+}
+.content-item.active {
+	opacity: 1;
+}
+
+.vk-video {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+video{  
+            position: fixed;  
+            right: 0px;  
+            bottom: 0px;  
+            min-width: 100%;  
+            min-height: 100%;  
+            height: auto;  
+            width: auto;  
+            /*¼ÓÂË¾µ*/  
+            /* -webkit-filter: grayscale(100%);   */
+            /* filter:grayscale(100%);   */
+        }  
+        source{  
+            min-width: 100%;  
+            min-height: 100%;  
+            height: auto;  
+            width: auto;  
+        }
+        .vk-control {
+        	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 300px;
+	height: 42px;
+	z-index: 999;
+        	text-align: center;
+        	line-height: 42px;
+        	border-top: 1px solid #ccc;
+        }
+        .vk-control .control-item {
+        	display: inline-block;
+        	width: 16px;
+        	height: 16px;
+        	border-radius: 50%;
+        	background-color: #ccc;
+        	margin: 0 5px;
+        	cursor: pointer;
+        }
+        .vk-control .control-item.active {
+        	background-color: skyblue;
+        }
