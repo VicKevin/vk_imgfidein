@@ -16,11 +16,11 @@
 	function Imgfidein(targetId,opts) {
 		this.targetId = document.getElementById(targetId);
 		this.delay = opts.delay;
-		this.slideBox = document.querySelector('.vk-slide');
-		this.videoBg = document.querySelector('.vk-video');
-		this.content = document.querySelector('.vk-content');
+		this.slideBox = this.targetId.querySelector('.vk-slide');
+		this.videoBg = this.targetId.querySelector('.vk-video');
+		this.content = this.targetId.querySelector('.vk-content');
 		this.contItems = this.content.querySelectorAll('.content-item');
-		this.controlBox = document.querySelector('.vk-control');
+		this.controlBox = this.targetId.querySelector('.vk-control');
 
 		opts = opts || defaultOpts;
         for (var k in defaultOpts) {
@@ -129,12 +129,16 @@
 				}
 			});
 			addEvents(self.content,'mouseenter',function() {
-				clearInterval(self.timer);
+				if(document.querySelector('body').scrollWidth > 750) {
+					clearInterval(self.timer);
+				}
 				self.slideBox.style.display = 'block';
 				self.videoBg.style.display = 'none';
 			});
 			addEvents(self.content,'mouseleave',function() {
-				clearInterval(self.timer);
+				if(document.querySelector('body').scrollWidth > 750) {
+					clearInterval(self.timer);
+				}
 				self.timer = setInterval(self._autoPlay(),self.delay);
 				self.slideBox.style.display = 'none';
 				self.videoBg.style.display = 'block';
