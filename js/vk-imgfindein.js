@@ -70,6 +70,7 @@
 					video.appendChild(source);
 				}
 				this.videoBg.appendChild(video);
+				this.videoEle = video;
 			}else {
 				this.videoBg.style.display = 'none';
 			}
@@ -120,7 +121,11 @@
 						self._animateFideIn(self.imgItems[self.index]);
 					});
 				}
-			}
+			};
+			addEvents(self.videoEle,'canplaythrough',function() {
+				self.videoBg.style.display = 'block';
+				self.slideBox.style.display = 'none';
+			});
 			addEvents(self.content,'mouseenter',function() {
 				clearInterval(self.timer);
 				self.slideBox.style.display = 'block';
