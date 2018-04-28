@@ -59,18 +59,22 @@
 			}
 			this.controls = this.controlBox.querySelectorAll('.control-item');
 			this.imgItems = this.slideBox.querySelectorAll('.slide-item');
-			if(this.video) {
-				var video = document.createElement('video');
-				video.setAttribute('autoplay','autoplay');
-				video.setAttribute('loop','loop');
-				for(var i = 0; i < this.video.length; i++) {
-					var source = document.createElement('source');
-					source.setAttribute('src',this.video[i].url);
-					source.setAttribute('type',this.video[i].type);
-					video.appendChild(source);
+			if(document.querySelector('body').scrollWidth > 750) {
+				if(this.video) {
+					var video = document.createElement('video');
+					video.setAttribute('autoplay','autoplay');
+					video.setAttribute('loop','loop');
+					for(var i = 0; i < this.video.length; i++) {
+						var source = document.createElement('source');
+						source.setAttribute('src',this.video[i].url);
+						source.setAttribute('type',this.video[i].type);
+						video.appendChild(source);
+					}
+					this.videoBg.appendChild(video);
+					this.videoEle = video;
+				}else {
+					this.videoBg.style.display = 'none';
 				}
-				this.videoBg.appendChild(video);
-				this.videoEle = video;
 			}else {
 				this.videoBg.style.display = 'none';
 			}
