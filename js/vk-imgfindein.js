@@ -123,8 +123,10 @@
 				}
 			};
 			addEvents(self.videoEle,'canplaythrough',function() {
-				self.videoBg.style.display = 'block';
-				self.slideBox.style.display = 'none';
+				if(document.querySelector('body').scrollWidth > 750) {
+					self.videoBg.style.display = 'block';
+					self.slideBox.style.display = 'none';
+				}
 			});
 			addEvents(self.content,'mouseenter',function() {
 				clearInterval(self.timer);
